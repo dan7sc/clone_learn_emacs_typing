@@ -1,5 +1,4 @@
 const assert = require('assert');
-const should = require('should');
 const Buffer = require('safe-buffer').Buffer;
 const utils = require('../lib/utils');
 
