@@ -424,7 +424,7 @@ describe('app.router', function() {
                     next();
                 });
 
-                app.get('/user/test', function(req, res) {
+                app.get('/user/test/', function(req, res) {
                     res.end('tj');
                 });
 
@@ -572,7 +572,7 @@ describe('app.router', function() {
 
             request(app)
                 .get('/api/users/foo.bar.json')
-                .expect('/users/foo.bar as json', done);
+                .expect('users/foo.bar as json', done);
         });
 
         it('should work cross-segment', function(done) {
@@ -594,7 +594,7 @@ describe('app.router', function() {
         it('should allow naming', function(done) {
             const app = express();
 
-            app.get('api/:resource(*)', function(req, res) {
+            app.get('/api/:resource(*)', function(req, res) {
                 const resource = req.params.resource;
                 res.end(resource);
             });
